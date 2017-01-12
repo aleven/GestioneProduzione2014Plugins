@@ -1,0 +1,123 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FEF254AF-C31B-49F2-B5F2-A3E7C19563E3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GestioneProduzione2014OfficeExport</RootNamespace>
+    <AssemblyName>GestioneProduzione2014OfficeExport</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataGridViewToExcel.cs" />
+    <Compile Include="ExcelUtils.cs" />
+    <Compile Include="frmOffertaExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOffertaExcel.Designer.cs">
+      <DependentUpon>frmOffertaExcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratoreOfferta.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmOffertaExcel.resx">
+      <DependentUpon>frmOffertaExcel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\VS2005\VS2005Commons\VS2005Commons\VS2005Commons.csproj">
+      <Project>{E8440AF9-89B7-4512-AA95-67E9FF89B38E}</Project>
+      <Name>VS2005Commons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GestioneProduzione2014Data\GestioneProduzione2014Data.csproj">
+      <Project>{90371958-F0FE-4FFF-BE14-1463E3EAAD5C}</Project>
+      <Name>GestioneProduzione2014Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lib\Office14\Microsoft.Office.InfoPath.Permission.dll" />
+    <Content Include="lib\Office14\Microsoft.Office.interop.access.dao.dll" />
+    <Content Include="lib\Office14\Microsoft.Office.Interop.Access.dll" />
+    <Content Include="lib\Office14\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="lib\Office14\Microsoft.Office.Interop.Excel.xml" />
+    <Content Include="lib\Office14\Microsoft.Office.Interop.Graph.dll" />
+    <Content Include="lib\Office14\Microsoft.Office.Interop.InfoPath.dll" />
+    <Content Include="lib\Office14\Microsoft.Office.Interop.InfoPath.SemiTrust.dll" />
+    <Content Include="lib\Office14\Microsoft.Office.Interop.InfoPath.Xml.dll" />
+    <Content Include="lib\Office14\Microsoft.Office.Interop.MSProject.dll" />
+    <Content Include="lib\Office14\Microsoft.Office.Interop.OneNote.dll" />
+    <Content Include="lib\Office14\Microsoft.Office.Interop.Outlook.dll" />
+    <Content Include="lib\Office14\Microsoft.Office.Interop.Outlook.xml" />
+    <Content Include="lib\Office14\Microsoft.Office.Interop.OutlookViewCtl.dll" />
+    <Content Include="lib\Office14\Microsoft.Office.Interop.PowerPoint.dll" />
+    <Content Include="lib\Office14\Microsoft.Office.Interop.Publisher.dll" />
+    <Content Include="lib\Office14\Microsoft.Office.Interop.SharePointDesigner.dll" />
+    <Content Include="lib\Office14\Microsoft.Office.Interop.SharePointDesignerPage.dll" />
+    <Content Include="lib\Office14\Microsoft.Office.Interop.SmartTag.dll" />
+    <Content Include="lib\Office14\Microsoft.Office.Interop.Visio.dll" />
+    <Content Include="lib\Office14\Microsoft.Office.Interop.Visio.SaveAsWeb.dll" />
+    <Content Include="lib\Office14\Microsoft.Office.Interop.VisOcx.dll" />
+    <Content Include="lib\Office14\Microsoft.Office.Interop.Word.dll" />
+    <Content Include="lib\Office14\Microsoft.Office.Interop.Word.xml" />
+    <Content Include="lib\Office14\Microsoft.Vbe.Interop.dll" />
+    <Content Include="lib\Office14\Microsoft.Vbe.Interop.Forms.dll" />
+    <Content Include="lib\Office14\Office.dll" />
+    <Content Include="lib\Office14\office.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

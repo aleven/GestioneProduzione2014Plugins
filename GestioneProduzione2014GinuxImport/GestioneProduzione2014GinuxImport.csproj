@@ -1,0 +1,237 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0F3B9C85-A47A-496C-A9DA-FCB2BEC6282B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GestioneProduzione2014GinuxImport</RootNamespace>
+    <AssemblyName>GestioneProduzione2014GinuxImport</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'All|AnyCPU' ">
+    <OutputPath>bin\All\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\WINDOWS\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configura.cs" />
+    <Compile Include="DataSetEtichette.cs">
+      <DependentUpon>DataSetEtichette.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSetEtichette.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetEtichette.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetImport.cs">
+      <DependentUpon>DataSetImport.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSetImport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetImport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmArticoliDescrizioniCommerciali.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmArticoliDescrizioniCommerciali.Designer.cs">
+      <DependentUpon>frmArticoliDescrizioniCommerciali.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmArticoliImporta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmArticoliImporta.Designer.cs">
+      <DependentUpon>frmArticoliImporta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPlugin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlugin.Designer.cs">
+      <DependentUpon>frmPlugin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReport2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReport2.Designer.cs">
+      <DependentUpon>frmReport2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStampaEtichette.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStampaEtichette.Designer.cs">
+      <DependentUpon>frmStampaEtichette.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUtenti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUtenti.Designer.cs">
+      <DependentUpon>frmUtenti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmArticoliDescrizioniCommerciali.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmArticoliDescrizioniCommerciali.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStampaEtichette.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmStampaEtichette.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="REDA-Etichette.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>REDA-Etichette.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="frmArticoliImporta.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmArticoliImporta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPlugin.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmPlugin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReport2.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmReport2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUtenti.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmUtenti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="REDA-ReportPrezzi.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>REDA-ReportPrezzi.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="REDA-Etichette.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>REDA-Etichette.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REDA-ReportPrezzi.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>REDA-ReportPrezzi.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataSetImport.xsc">
+      <DependentUpon>DataSetImport.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetImport.xss">
+      <DependentUpon>DataSetImport.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\GestioneProduzione2014Data.GestioneProduzione2009DataSet.datasource" />
+    <None Include="Resources\save_all.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\document_preview.png" />
+    <None Include="Resources\undo.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="DataSetEtichette.xsc">
+      <DependentUpon>DataSetEtichette.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetEtichette.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetEtichette.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetEtichette.xss">
+      <DependentUpon>DataSetEtichette.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\dialog_close.png" />
+    <None Include="Resources\apply.png" />
+    <None Include="DataSetImport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetImport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\db_comit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\VS2005\VS2005Commons\VS2005Commons\VS2005Commons.csproj">
+      <Project>{E8440AF9-89B7-4512-AA95-67E9FF89B38E}</Project>
+      <Name>VS2005Commons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GestioneProduzione2014Data\GestioneProduzione2014Data.csproj">
+      <Project>{90371958-F0FE-4FFF-BE14-1463E3EAAD5C}</Project>
+      <Name>GestioneProduzione2014Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
